@@ -17,6 +17,9 @@ public class Bill {
     private float billAmount;
     private Date billDate;
     private String billStatus;
+    private double taxrate=0.1;
+    private double additionalcharge2;
+    private double AddDiscount=0.05;
 
     public Bill(int bill_ID, ArrayList<Customer> customers, float billAmount, Date billDate, String billStatus) {
         this.bill_ID = bill_ID;
@@ -24,6 +27,9 @@ public class Bill {
         this.billAmount = billAmount;
         this.billDate = billDate;
         this.billStatus = billStatus;
+    }
+
+    public Bill() {
     }
 
 
@@ -77,5 +83,38 @@ public class Bill {
     public void selectBill() {
         System.out.println("Bill selected");
     }
+    public double tax(double consumption){
+     double taxamount=consumption*taxrate;
+     
+        return taxamount;
+    }
+       public double additionalCharge1(double consumption){
+     
+      if(consumption<900)
+       {
+           additionalcharge2 =10;
+       }
+       else if(consumption>900 && consumption <1200 )
+       {
+           additionalcharge2 =20;
+       }
+
+       else if(consumption>1200 && consumption <1500 )
+       {
+           additionalcharge2 =30;
+       }
+       else
+       {
+           additionalcharge2 =50;
+       }
+double additionalcharge=consumption*additionalcharge2;
+        return additionalcharge;
+    }
+       
+       public double AddDiscount1(double consumption){ 
+       double discountamount2;
+       discountamount2=AddDiscount*consumption;
+       return discountamount2;
+       }
 
 }
