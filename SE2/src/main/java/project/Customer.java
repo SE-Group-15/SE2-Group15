@@ -8,21 +8,23 @@ package project;
  *
  * @author DELL
  */
-public class Customer {
+public class Customer  {
     private int customerId;
     private String customerName;
     private double consumption;
     private Bill bill;
     private Inquiry inquiry;
+    private ConsumptionROI i;
 
-    public Customer(int customerId, String customerName, double consumption, Bill bill, Inquiry inquiry) {
+
+     public Customer(int customerId, String customerName, double consumption, Bill bill, Inquiry inquiry, ConsumptionROI i) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.consumption = consumption;
         this.bill = bill;
         this.inquiry = inquiry;
+        this.i = i;
     }
-
 
     public int getCustomerId() {
         return customerId;
@@ -64,6 +66,10 @@ public class Customer {
         this.inquiry = inquiry;
     }
 
+   public void getConsumption(double Consumption)
+      {
+          i.getConsumption(Consumption);
+      }
 
 //    @Override
 //    public String toString() {
@@ -75,5 +81,4 @@ public class Customer {
 //                ", inquiry=" + inquiry +
 //                '}';
 //    }
-} 
-
+}
