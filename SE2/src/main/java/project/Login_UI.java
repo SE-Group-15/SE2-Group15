@@ -4,17 +4,21 @@
  */
 package project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author DELL
  */
 public class Login_UI extends javax.swing.JFrame {
-
+    User u;
+    Account account ;
     /**
      * Creates new form Login_UI
      */
     public Login_UI() {
         initComponents();
+       // account.printUsers();
     }
 
     /**
@@ -67,6 +71,11 @@ public class Login_UI extends javax.swing.JFrame {
         jLabel4.setText("Account Type:");
 
         jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Sign up");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +209,21 @@ public class Login_UI extends javax.swing.JFrame {
         new Signup().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  
+        String username = jTextField1.getText();
+  String password = new String(jPasswordField1.getPassword()); // Get password securely
+
+  if (account.verifyLogin(username, password)) {
+    // Login successful!
+    // Implement logic based on account type (if applicable)
+    System.out.println("Login successful for " + username);
+  } else {
+    // Login failed
+    JOptionPane.showMessageDialog(this, "Invalid username or password!");
+  }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

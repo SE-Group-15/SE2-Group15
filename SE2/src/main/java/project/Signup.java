@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
  * @author DELL
  */
 public class Signup extends javax.swing.JFrame {
-
+    User u;
+    private Account account = new Account();
     /**
      * Creates new form Signup
      */
@@ -235,6 +236,17 @@ if (!Password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$")) {
     JOptionPane.showMessageDialog(null, "Password is invalid. Please enter a password that is at least 8 characters long and contains at least one uppercase letter, one lowercase letter, and one number.");
     return;
 }
+
+u = new User(FullName,Username,Password);
+account.registerUser(FullName, Username, Password);
+
+            JOptionPane.showMessageDialog(null, "Registered");
+            fullname.setText("");
+            username.setText("");
+            password.setText("");
+            account.printUsers();
+            
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void fullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullnameActionPerformed

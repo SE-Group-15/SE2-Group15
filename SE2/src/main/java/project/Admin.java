@@ -8,34 +8,31 @@ package project;
  *
  * @author DELL
  */
-public class Admin extends User {
+public class Admin {
 
-    private String role;
+    private int adminID;
+    private Inquiry inquiry;
 
+     public Admin(int adminID, Inquiry inquiry) {
+        this.adminID = adminID;
+        this.inquiry = inquiry;
+    }
 
-    public Admin(int userID, String name, String gender, int age, String address, String phone, String email, String username, String password, String role) {
-        super(userID, name, gender, age, address, phone, email, username, password);
-        this.role = role;
+ 
+    public int getAdminID() {
+        return adminID;
+    }
+
+    public void setAdminID(int adminID) {
+        this.adminID = adminID;
     }
 
 
-    public String getRole() {
-        return role;
+    public Inquiry getInquiry() {
+        return inquiry;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-
-    public void viewCustomerInfo(int userID) {
-
-        System.out.println("Viewing customer information for user ID: " + userID);
-    }
-
-
-    public void updateCustomerInfo(int userID) {
-
-        System.out.println("Updating customer information for user ID: " + userID);
+    public void setInquiry(Inquiry inquiry) {
+        this.inquiry = inquiry;
     }
 }

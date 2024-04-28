@@ -8,44 +8,72 @@ package project;
  *
  * @author DELL
  */
-public class Customer extends User {
-
+public class Customer {
+    private int customerId;
+    private String customerName;
     private double consumption;
-    private Inquiry inquiry;
-    private String meterClassification;
     private Bill bill;
-    private String meterType;
+    private Inquiry inquiry;
 
-
-    public Customer(int userID, String name, String gender, int age, String address, String phone, String email, String username, String password,
-                    double consumption, Inquiry inquiry, String meterClassification, Bill bill, String meterType) {
-
-        super(userID, name, gender, age, address, phone, email, username, password);
-
-        // Initialize additional attributes for Customer class
+    public Customer(int customerId, String customerName, double consumption, Bill bill, Inquiry inquiry) {
+        this.customerId = customerId;
+        this.customerName = customerName;
         this.consumption = consumption;
-        this.inquiry = inquiry;
-        this.meterClassification = meterClassification;
         this.bill = bill;
-        this.meterType = meterType;
+        this.inquiry = inquiry;
     }
 
 
-
- 
-    public String billingHistory() {
-
-        return "Billing history for customer";
+    public int getCustomerId() {
+        return customerId;
     }
 
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
-    public void updateInfo(double consumption, Inquiry inquiry, String meterClassification, Bill bill, String meterType) {
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public double getConsumption() {
+        return consumption;
+    }
+
+    public void setConsumption(double consumption) {
         this.consumption = consumption;
-        this.inquiry = inquiry;
-        this.meterClassification = meterClassification;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
         this.bill = bill;
-        this.meterType = meterType;
+    }
+
+    public Inquiry getInquiry() {
+        return inquiry;
+    }
+
+    public void setInquiry(Inquiry inquiry) {
+        this.inquiry = inquiry;
     }
 
 
-}
+//    @Override
+//    public String toString() {
+//        return "Customer{" +
+//                "customerId=" + customerId +
+//                ", customerName='" + customerName + ''' +
+//                ", consumption=" + consumption +
+//                ", bill=" + bill +
+//                ", inquiry=" + inquiry +
+//                '}';
+//    }
+} 
+
