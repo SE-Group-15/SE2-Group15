@@ -18,7 +18,7 @@ public class Login_UI extends javax.swing.JFrame {
      */
     public Login_UI() {
         account = Account.getInstance();
-        this.account.registerUser("John Doe", "john", "Omar1234");
+        this.account.registerUser("John Doe", "john", "Omar1234","0000");
         initComponents();
        // account.printUsers();
     }

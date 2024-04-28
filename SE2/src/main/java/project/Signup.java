@@ -272,11 +272,11 @@ public class Signup extends javax.swing.JFrame {
         return;
     }
 
-
+    
     // Register user
-    account.registerUser(fullName, Username, password);
+    account.registerUser(fullName, Username, password,MeterID);
     JOptionPane.showMessageDialog(this, "Registration successful!");
-
+        System.out.println(account.UserData());
     // Clear fields
     fullname.setText("");
     username.setText("");

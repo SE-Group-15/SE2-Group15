@@ -9,12 +9,23 @@ package project;
  * @author omarb
  */
 public class CalculateConsumption extends javax.swing.JFrame {
-
+// private String MeterN;
+private Account account;
+//    public CalculateConsumption(String MeterN) {
+//        this.MeterN = MeterN;
+//         initComponents();
+//         txtmet.setText(MeterN);
+//
+//    }
+ 
     /**
      * Creates new form CalculateConsumption
      */
     public CalculateConsumption() {
+     account=Account.getInstance();
         initComponents();
+        txtmet.setText(account.UserData());
+        
     }
 
     /**
