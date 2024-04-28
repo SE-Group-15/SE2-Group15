@@ -56,33 +56,31 @@ public class MeterReading {
 
     // Function to calculate consumption
     public void calculateConsumption() {
-        // Your implementation here
+
     }
 
     // Function to calculate cost
     public void calculateCost() {
-        // Your implementation here
+
     }
 
     // Function to check meter status
     public void meterStat() {
-        // Your implementation here
+
     }
 
     // Function to add discount and return bill_id
     public int addDiscount() {
-        // Your implementation here
         return 0; // Return bill_id
     }
 
     // Function to add additional charge and return bill_id
     public int additionalCharge() {
-        // Your implementation here
         return 0; // Return bill_id
     }
 
     // Function to calculate total consumption
     public void totalConsumption() {
-        // Your implementation here
+
     }
 }

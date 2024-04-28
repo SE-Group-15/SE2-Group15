@@ -219,6 +219,8 @@ public class Login_UI extends javax.swing.JFrame {
     // Login successful!
     // Implement logic based on account type (if applicable)
     System.out.println("Login successful for " + username);
+    new CustomerDashboard().setVisible(true);
+    this.dispose();
   } else {
     // Login failed
     JOptionPane.showMessageDialog(this, "Invalid username or password!");
