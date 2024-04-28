@@ -17,8 +17,8 @@ public class Account {
         return instance;
     }
 
-    public void registerUser(String name, String username, String password) {
-        users.add(new User(name, username, password));
+    public void registerUser(String name, String username, String password, String MeterN) {
+        users.add(new User(name, username, password , MeterN));
     }
 
     public boolean verifyLogin(String username, String password) {
@@ -29,4 +29,14 @@ public class Account {
         }
         return false;
         }
+    public String UserData(){
+    
+    for (User user : users) {
+           return user.getMeterN();
+        }
+        return null;
+    }
+    // Return null if no matching user is found
 }
+
+    

@@ -4,11 +4,17 @@ public class User {
     private String name;
     private String username;
     private String password;
-
-    public User(String name, String username, String password) {
+    private String MeterN;
+    public User(String name, String username, String password, String MeterN) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.MeterN=MeterN;
+    }
+    
+
+    public String getMeterN() {
+        return MeterN;
     }
 
     public String getUsername() {
