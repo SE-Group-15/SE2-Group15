@@ -9,6 +9,16 @@ package project;
  * @author omarb
  */
 public class CalculateBill extends javax.swing.JFrame {
+private double reading1;
+private double consumption;
+    public CalculateBill(double reading1, double consumption) {
+        this.reading1 = reading1;
+        this.consumption = consumption;
+           initComponents();
+            System.out.println(reading1);
+    }
+
+
 
     /**
      * Creates new form CalculateBill
@@ -17,6 +27,7 @@ public class CalculateBill extends javax.swing.JFrame {
         initComponents();
     }
 
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

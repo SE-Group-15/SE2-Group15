@@ -4,6 +4,8 @@
  */
 package project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author omarb
@@ -11,6 +13,7 @@ package project;
 public class CalculateConsumption extends javax.swing.JFrame {
 // private String MeterN;
 private Account account;
+private int Reading;
 //    public CalculateConsumption(String MeterN) {
 //        this.MeterN = MeterN;
 //         initComponents();
@@ -25,7 +28,7 @@ private Account account;
      account=Account.getInstance();
         initComponents();
         txtmet.setText(account.UserData());
-        
+       txtcname.setText(account.Username1());
     }
 
     /**
@@ -68,6 +71,7 @@ private Account account;
         txtprint = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         txtmet = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -93,6 +97,12 @@ private Account account;
             }
         });
 
+        txtcon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtconActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Calculate");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +120,13 @@ private Account account;
         txtmet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtmetActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Generate Bill");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -138,8 +155,10 @@ private Account account;
                             .addContainerGap()
                             .addComponent(txtcname, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(jButton1)))
+                        .addGap(58, 58, 58)
+                        .addComponent(jButton1)
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -162,7 +181,9 @@ private Account account;
                             .addComponent(jLabel4)
                             .addComponent(txtcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1)))
@@ -182,9 +203,9 @@ private Account account;
                         .addGap(183, 183, 183)
                         .addComponent(jLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(40, 40, 40)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,6 +277,27 @@ private Account account;
        txtmet.setText(account.UserData());
     }//GEN-LAST:event_txtmetActionPerformed
 
+    private void txtconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtconActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtconActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (txtcon.getText()!=null) {
+ try {
+    int Reading = Integer.parseInt(txtcon.getText());
+    CalculateBill calculateBilll=new CalculateBill(Reading,totalconsumption);
+    calculateBilll.setVisible(true);
+    this.dispose();
+    
+} catch (NumberFormatException e) {
+   JOptionPane.showMessageDialog(null, "Reading is Invalid.");
+}}
+        else   {
+               JOptionPane.showMessageDialog(null, "Reading is Invalid.");
+
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +335,7 @@ private Account account;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

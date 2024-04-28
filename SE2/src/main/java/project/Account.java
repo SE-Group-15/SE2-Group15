@@ -36,6 +36,13 @@ public class Account {
         }
         return null;
     }
+     public String Username1(){
+    
+    for (User user : users) {
+           return user.getUsername();
+        }
+        return null;
+    }
     // Return null if no matching user is found
 }
 
