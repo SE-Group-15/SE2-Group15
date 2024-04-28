@@ -77,7 +77,6 @@ private Account account;
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel1.setText("Calculate consumption");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Documents\\GitHub\\SE2-Group15\\SE2\\logose.png")); // NOI18N
         jLabel5.setText("jLabel5");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -107,6 +106,12 @@ private Account account;
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel2.setText("Customer");
+
+        txtmet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtmetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -245,6 +250,11 @@ private Account account;
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtmetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmetActionPerformed
+        // TODO add your handling code here:
+       txtmet.setText(account.UserData());
+    }//GEN-LAST:event_txtmetActionPerformed
 
     /**
      * @param args the command line arguments
